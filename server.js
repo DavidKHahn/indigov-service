@@ -36,6 +36,20 @@ app.post('/constituents', (req, res) => {
   res.json({ message: 'Constituent added/updated', data: constituents });
 });
 
+// Delete a constituent
+app.delete('/constituents/:email', (req, res) => {
+    const { email } = req.params;
+    const index = constituents.findIndex(c => c.email === email);
+  
+    if (index !== -1) {
+      constituents.splice(index, 1); // Remove constituent from the array
+      fs.writeFileSync(dataFile, JSON.stringify(constituents, null, 2));
+      res.json({ message: `Constituent with email ${email} deleted successfully`, data: constituents });
+    } else {
+      res.status(404).json({ message: `Constituent with email ${email} not found` });
+    }
+  });
+
 // Route to export constituents to a CSV file
 app.get('/export', (req, res) => {
   const csvWriter = createObjectCsvWriter({

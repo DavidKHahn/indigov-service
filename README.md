@@ -2,11 +2,6 @@
 
 A simple Express.js server for managing constituents with CRUD operations and CSV export functionality.
 
-## Requirements
-
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
-
 ## Setup
 
 1. **Clone the repository:**
@@ -23,6 +18,8 @@ A simple Express.js server for managing constituents with CRUD operations and CS
 2. **Install dependencies and start server:**
 
    `npm install`
+
+   `cd frontend && npm install`
 
    `npm start`
 
