@@ -53,5 +53,13 @@ app.get('/export', (req, res) => {
   });
 });
 
+// connect our backend code with the frontend
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+});
+
 // Start the server
 app.listen(3000, () => console.log('Server running on port 3000'));
