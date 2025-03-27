@@ -8,8 +8,8 @@ A simple Express.js server for managing constituents with CRUD operations and CS
 
    Clone the repository to your local machine:
 
-   ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/indigov-service.git
+   ```
+   git clone https://github.com/DavidKHahn/indigov-service.git
 
    cd indigov-service
 
